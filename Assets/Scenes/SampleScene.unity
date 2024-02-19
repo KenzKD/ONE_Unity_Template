@@ -304,6 +304,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: All in One Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2968118408108016982, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261884307084860395, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734959335322521449, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061671118129194043, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
