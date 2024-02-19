@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -6,20 +5,21 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-
+    // Singleton instance for easy access
     public static SettingsManager Instance;
+
+    // Game state flags
     public static bool GameisPaused = false, GameisStarted = false;
+
+    // UI elements
     public Slider _bgmSlider, _sfxSlider;
     public Button settingsButton;
     public GameObject introPanel, settingsPanel, scorePanel, settingObject, restartObject;
 
-
+    // Initialize game state and UI
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+        Instance = this;
         Time.timeScale = 0f;
         GameisStarted = false;
         GameisPaused = true;
@@ -30,24 +30,18 @@ public class SettingsManager : MonoBehaviour
         restartObject.SetActive(false);
     }
 
+    // Load volume settings or set to max
     void Start()
     {
-        if (PlayerPrefs.HasKey("bgmSavedVolume") || PlayerPrefs.HasKey("sfxSavedVolume"))
-        {
-            Debug.Log("Playerprefs Exist");
-            _bgmSlider.value = PlayerPrefs.GetFloat("bgmSavedVolume");
-            _sfxSlider.value = PlayerPrefs.GetFloat("sfxSavedVolume");
-        }
-        else
-        {
-            _bgmSlider.value = _bgmSlider.maxValue;
-            _sfxSlider.value = _sfxSlider.maxValue;
-        }
+        _bgmSlider.value = PlayerPrefs.GetFloat("bgmSavedVolume", _bgmSlider.maxValue);
+        _sfxSlider.value = PlayerPrefs.GetFloat("sfxSavedVolume", _sfxSlider.maxValue);
 
+        // Apply the volume settings
         BgmSliderVolume();
         SfxSliderVolume();
     }
 
+    // Start the game
     public void StartGame()
     {
         introPanel.SetActive(false);
@@ -58,23 +52,27 @@ public class SettingsManager : MonoBehaviour
         GameisStarted = true;
     }
 
+    // Check if gameplay is allowed
     public bool AllowGamePlay()
     {
         return !EventSystem.current.IsPointerOverGameObject() && SettingsManager.GameisStarted && !SettingsManager.GameisPaused;
     }
 
+    // Adjust BGM volume
     public void BgmSliderVolume()
     {
         AudioManager.Instance.BGMVolume(_bgmSlider.value * 0.05f);
         PlayerPrefs.SetFloat("bgmSavedVolume", _bgmSlider.value);
     }
 
+    // Adjust SFX volume
     public void SfxSliderVolume()
     {
         AudioManager.Instance.SFXVolume(_sfxSlider.value * 0.2f);
         PlayerPrefs.SetFloat("sfxSavedVolume", _sfxSlider.value);
     }
 
+    // Pause the game
     public void Pause()
     {
         settingsPanel.SetActive(true);
@@ -87,6 +85,7 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    // Resume the game
     public void Resume()
     {
         settingsPanel.SetActive(false);
@@ -99,18 +98,21 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    // Restart the game
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Destroy(gameObject);
     }
 
+    // Load the menu
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
+    // Quit the game
     public void QuitGame()
     {
         Debug.Log("Quitting Game...");

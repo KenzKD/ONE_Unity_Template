@@ -1,6 +1,4 @@
-using System.IO;
 using UnityEngine;
-using UnityEngine.Video;
 
 [System.Serializable]
 public class Video

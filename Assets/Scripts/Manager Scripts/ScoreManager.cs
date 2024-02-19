@@ -6,31 +6,33 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
+    // Singleton instance for easy access
     public static ScoreManager Instance;
+
+    // UI elements
     public GameObject WinScreen, WrongText;
     public float score, total_Score;
     public TextMeshProUGUI scoreText;
     public ShakePreset ShakePreset;
 
-
+    // Initialize game state and UI
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        scoreText.text = score.ToString() + "/" + total_Score.ToString();
+        Instance = this;
+        scoreText.text = $"{score}/{total_Score}";
         WinScreen.SetActive(false);
     }
 
+    // Add points to the score
     public void AddPoint(float value)
     {
         score += value;
-        Debug.Log(score);
-        scoreText.text = score.ToString() + "/" + total_Score.ToString();
+        Debug.Log($"New score: {score}");
+        scoreText.text = $"{score}/{total_Score}";
         CheckWin();
     }
 
+    // Check if the score equals the total score
     void CheckWin()
     {
         if (score == total_Score)
@@ -39,10 +41,13 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    // Handle winning the game
     IEnumerator Win(float seconds)
     {
+        AudioManager.sfxAllowOverlap = true;
         // AudioManager.Instance.PlaySFX("Bonus");
         yield return new WaitForSeconds(seconds);
+        AudioManager.sfxAllowOverlap = false;
         Time.timeScale = 0f;
         VideoManager.Instance.PlayVideo("Win");
         Debug.Log("Win!");
@@ -52,6 +57,7 @@ public class ScoreManager : MonoBehaviour
         WinScreen.SetActive(true);
     }
 
+    // Handle wrong answer
     public void Wrong(Vector3 newPosition)
     {
         AudioManager.Instance.PlaySFX("Wrong");
@@ -59,6 +65,7 @@ public class ScoreManager : MonoBehaviour
         StartCoroutine(InstanceText(newPosition));
     }
 
+    // Instantiate wrong answer text
     IEnumerator InstanceText(Vector3 newPosition)
     {
         GameObject Text = Instantiate(WrongText, newPosition, Quaternion.identity);

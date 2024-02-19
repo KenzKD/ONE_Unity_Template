@@ -4,7 +4,10 @@ using UnityEngine.Video;
 
 public class VideoManager : MonoBehaviour
 {
+    // Singleton instance for easy access
     public static VideoManager Instance;
+
+    // Array of available videos
     public Video[] videos;
 
     void Awake()
@@ -12,24 +15,26 @@ public class VideoManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    // Find video by name and play it if found
     public void PlayVideo(string name)
     {
         Video v = Array.Find(videos, x => x.name == name);
         if (v == null)
         {
-            Debug.Log("Video Not Found");
+            Debug.Log($"Video '{name}' not found!");
         }
         else
         {
-            VideoPlayer videoPlayer = GetComponent<VideoPlayer>();
-            if (videoPlayer)
+            // Play video using VideoPlayer component
+            if (TryGetComponent<VideoPlayer>(out var player))
             {
+                // Get video path from streaming assets
                 string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, v.videoName);
-                Debug.Log(videoPath);
-                videoPlayer.url = videoPath;
-                videoPlayer.Play();
+                Debug.Log($"Playing video: {videoPath}");
+                player.url = videoPath;
+                player.Play();
             }
         }
-
     }
 }
