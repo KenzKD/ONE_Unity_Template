@@ -830,7 +830,7 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration:
-    WebGL: 1
+    WebGL: 2
   il2cppCodeGeneration:
     WebGL: 1
   managedStrippingLevel:
