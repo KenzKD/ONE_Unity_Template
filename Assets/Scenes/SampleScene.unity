@@ -341,6 +341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2968118408108016982, guid: ff8aa9b9fa9f3464a93658f37a824670,
         type: 3}
+      propertyPath: m_text
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968118408108016982, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
       propertyPath: m_fontStyle
       value: 33
       objectReference: {fileID: 0}
@@ -386,8 +391,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061671118129194043, guid: ff8aa9b9fa9f3464a93658f37a824670,
         type: 3}
+      propertyPath: m_text
+      value: Instructions
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061671118129194043, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
       propertyPath: m_fontStyle
       value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550819232936933411, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_text
+      value: 3/3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550819232936933411, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 42.65
       objectReference: {fileID: 0}
     - target: {fileID: 7572272540754579319, guid: ff8aa9b9fa9f3464a93658f37a824670,
         type: 3}
