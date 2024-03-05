@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class SettingsManager : MonoBehaviour
     public Button settingsButton;
     public GameObject introPanel, settingsPanel, scorePanel, settingObject, restartObject;
 
+    private Image settingsBGM;
+
+
     // Initialize game state and UI
     void Awake()
     {
@@ -28,6 +32,7 @@ public class SettingsManager : MonoBehaviour
         scorePanel.SetActive(false);
         settingObject.SetActive(true);
         restartObject.SetActive(false);
+        settingsBGM = settingsPanel.GetComponent<Image>();
     }
 
     // Load volume settings or set to max
@@ -48,6 +53,8 @@ public class SettingsManager : MonoBehaviour
         scorePanel.SetActive(true);
         restartObject.SetActive(true);
         Time.timeScale = 1f;
+        settingObject.SetActive(true);
+        settingObject.transform.DOScale(1, 0.5f).SetEase(Ease.OutExpo).SetUpdate(true);
         GameisPaused = false;
         GameisStarted = true;
     }
@@ -76,7 +83,11 @@ public class SettingsManager : MonoBehaviour
     public void Pause()
     {
         settingsPanel.SetActive(true);
-        settingObject.SetActive(false);
+        settingsBGM.DOFade(0.8f, 0.5f).SetEase(Ease.OutExpo).SetUpdate(true);
+        settingObject.transform.DOScale(0.001f, 0.25f).SetEase(Ease.InExpo).SetUpdate(true).OnComplete(() =>
+        {
+            settingObject.SetActive(false);
+        });
         if (GameisStarted)
         {
             scorePanel.SetActive(false);
@@ -88,8 +99,10 @@ public class SettingsManager : MonoBehaviour
     // Resume the game
     public void Resume()
     {
+        settingsBGM.DOFade(0.001f, 0.001f).SetUpdate(true);
         settingsPanel.SetActive(false);
         settingObject.SetActive(true);
+        settingObject.transform.DOScale(1, 0.25f).SetEase(Ease.OutExpo).SetUpdate(true);
         if (GameisStarted)
         {
             scorePanel.SetActive(true);

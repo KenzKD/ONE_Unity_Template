@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6533276287335777193}
   - component: {fileID: 5746263746326761248}
   - component: {fileID: 2685506294358500917}
-  - component: {fileID: 6503114973741017129}
   - component: {fileID: 5369127360882761179}
   m_Layer: 0
   m_Name: Wrong Text
@@ -173,27 +172,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5746263746326761248}
   m_maskType: 0
---- !u!95 &6503114973741017129
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2835532625611229616}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9f737a85fef59e0499d8e99df01d8fad, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5369127360882761179
 MonoBehaviour:
   m_ObjectHideFlags: 0

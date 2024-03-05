@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using MilkShake;
 using System.Collections;
-
+using DG.Tweening;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -61,15 +61,11 @@ public class ScoreManager : MonoBehaviour
     public void Wrong(Vector3 newPosition)
     {
         AudioManager.Instance.PlaySFX("Wrong");
-        Shaker.ShakeAll(ShakePreset);
-        StartCoroutine(InstanceText(newPosition));
-    }
-
-    // Instantiate wrong answer text
-    IEnumerator InstanceText(Vector3 newPosition)
-    {
         GameObject Text = Instantiate(WrongText, newPosition, Quaternion.identity);
-        yield return new WaitForSeconds(1f);
-        Destroy(Text);
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            Text.transform.DOScale(0f, 0.5f).SetEase(Ease.InExpo).OnComplete(() => Destroy(Text));
+        });
+        Shaker.ShakeAll(ShakePreset);
     }
 }
