@@ -62,10 +62,7 @@ public class ScoreManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("Wrong");
         GameObject Text = Instantiate(WrongText, newPosition, Quaternion.identity);
-        DOVirtual.DelayedCall(0.5f, () =>
-        {
-            Text.transform.DOScale(0f, 0.5f).SetEase(Ease.InExpo).OnComplete(() => Destroy(Text));
-        });
+        Text.transform.DOScale(0f, 0.5f).SetEase(Ease.InExpo).SetDelay(0.5f).OnComplete(() => Destroy(Text));
         Shaker.ShakeAll(ShakePreset);
     }
 }
