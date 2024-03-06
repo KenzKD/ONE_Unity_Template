@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
 
     // UI elements
-    public GameObject WinScreen, WrongText;
+    public GameObject WinScreen, WrongText, Cam;
     public float score, total_Score;
     public TextMeshProUGUI scoreText;
     public ShakePreset ShakePreset;
@@ -46,6 +46,9 @@ public class ScoreManager : MonoBehaviour
     {
         AudioManager.sfxAllowOverlap = true;
         // AudioManager.Instance.PlaySFX("Bonus");
+        // Cam.transform.DOMove(new Vector3(0f, 0f, 0f), 1.5f).SetEase(Ease.Linear).OnComplete(() =>
+        //    {
+        //    });
         yield return new WaitForSeconds(seconds);
         AudioManager.sfxAllowOverlap = false;
         Time.timeScale = 0f;
