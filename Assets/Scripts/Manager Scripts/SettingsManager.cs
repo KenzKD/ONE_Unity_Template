@@ -114,6 +114,7 @@ public class SettingsManager : MonoBehaviour
     // Restart the game
     public void Restart()
     {
+        DOTween.KillAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Destroy(gameObject);
     }
@@ -121,6 +122,7 @@ public class SettingsManager : MonoBehaviour
     // Load the menu
     public void LoadMenu()
     {
+        DOTween.KillAll();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
@@ -128,6 +130,7 @@ public class SettingsManager : MonoBehaviour
     // Quit the game
     public void QuitGame()
     {
+        DOTween.KillAll();
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
