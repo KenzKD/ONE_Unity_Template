@@ -191,11 +191,36 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4734959335322521449, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7177954479096091449, guid: ff8aa9b9fa9f3464a93658f37a824670,
         type: 3}
       propertyPath: Cam
       value: 
       objectReference: {fileID: 1870306670}
+    - target: {fileID: 9026968662279729662, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9026968662279729662, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9026968662279729662, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9026968662279729662, guid: ff8aa9b9fa9f3464a93658f37a824670,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
