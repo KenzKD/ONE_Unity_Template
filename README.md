@@ -8,7 +8,7 @@
   <img src="https://github.com/KenzKD/ONE_Unity_Template/assets/65004578/714cefa6-60c9-4e4c-8c8d-74b93c72313d" width="100%" />
 </p>
 
-2) As the game has to work on many different devices. You should be able to play most of the game using just 1 Mouse Pointer. Try not to use the keyboard, unless you need to input text (I believe when you need to type something on a smartphone, the keyboard will automatically appear).
+2) As the game has to work on many different devices. You should be able to play most of the game using just 1 Finger. Try not to use the keyboard, unless you need to input text (I believe when you need to type something on a smartphone, the keyboard will automatically appear).
 
 3) The Build Size should be less than or Equal to 20 MB. Make sure to compress textures, meshes, Audio, etc. The Installed "WebGL Optimizer" Plugin can help with this.(The Build Size of an empty Project is 11.2 MB currently)
 
