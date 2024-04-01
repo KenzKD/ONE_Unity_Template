@@ -10,7 +10,7 @@
 
 2) As the game has to work on many different devices. You should be able to play most of the game using just 1 Finger. Try not to use the keyboard, unless you need to input text (I believe when you need to type something on a smartphone, the keyboard will automatically appear).
 
-3) The Build Size should be less than or Equal to 20 MB. Make sure to compress textures, meshes, Audio, etc. The Installed "WebGL Optimizer" Plugin can help with this.(The Build Size of an empty Project is 11.2 MB currently)
+3) The Build Size should be Less than or Equal to 20 MB. Make sure to Compress textures, meshes, Audio, etc. The Installed "WebGL Optimizer" Plugin can help with this.(The Build Size of an empty Project is 11.2 MB currently)
 
    Here are some things you can look up to learn more about making Build Size smaller and using the “WebGL Optimizer” tool:
    
@@ -24,7 +24,7 @@
 
    Here is how to Run your Built WebGL Games: https://youtu.be/Ceqbmm7ydS8?si=J2Yd9te7_tfUI36_
 
-6) Don’t change the camera’s position or angle directly. If you want to move or rotate the camera, do it by changing the “Camera Container”. This rule is for any scripts that move the camera too. We do this because we use the MilkShake Plugin to make the camera shake.
+6) Don’t change the camera’s position or angle directly. If you want to move or rotate the camera, do it by changing the “Camera Container”. This applies to any scripts that move the camera too. We do this because we use the MilkShake Plugin to handle any the camera shakes and changing its position can mess with the animation.
    
 <p align="center">
   <img src="https://github.com/KenzKD/ONE_Unity_Template/assets/65004578/c55de439-f4d6-4a5e-9799-2f66b46c68fd" width="50%" />
