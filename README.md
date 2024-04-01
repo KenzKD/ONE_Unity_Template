@@ -1,6 +1,6 @@
 # ONE_Unity_Template
 
-### Game Limitations
+### Game Guidelines
 
 1) Make sure to Install the WebGL Build Support and Use the Latest Version of Unity 2022.3 LTS
 
