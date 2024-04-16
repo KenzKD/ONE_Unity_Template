@@ -35,6 +35,31 @@
 
    Here is a video about the process: https://youtu.be/nZJkcca7vJ4?si=uO_QnZoWxXGuMTnk
 
+- - - -
+# Frequently Used Functions
+
+Basic Syntax to Call a Function from a Manager Script
+
+```
+ManagerScriptName.Instance.FunctionName(Parameters)
+```
+
+1) [AudioManager](https://github.com/KenzKD/ONE_Unity_Template/blob/main/Assets/Scripts/Manager%20Scripts/AudioManager.cs)
+    
+    - `PlaySFX(String AudioClipName)` -> Plays a Sound Effect using the AudioClipName
+    - `sfxAllowOverlap = true/false` -> A bool variable to Allow SFX to Overlap one Another. By default it is set to false.
+      
+2) [ScoreManager](https://github.com/KenzKD/ONE_Unity_Template/blob/main/Assets/Scripts/Manager%20Scripts/ScoreManager.cs)
+    
+    - `AddPoint(float Points)` -> Add Points to the Score, if it reaches the total Score it runs the Win Function
+    - `Wrong(Vector3 Position)`  -> Displays 'Wrong' at the given position and does a little Animation. 
+  
+3) [SettingsManager](https://github.com/KenzKD/ONE_Unity_Template/blob/main/Assets/Scripts/Manager%20Scripts/SettingsManager.cs)
+    
+    - `AllowGamePlay()` -> Returns true if the game is Started, not Paused, and the Mouse Pointer is not over a UI object.
+
+- - - -
 
 ### If you have any Ideas or Suggestions, Create a Pull Request for me to Review.
+
 
