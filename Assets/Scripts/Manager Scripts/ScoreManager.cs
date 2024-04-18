@@ -29,6 +29,7 @@ public class ScoreManager : MonoBehaviour
         score += value;
         Debug.Log($"New score: {score}");
         scoreText.text = $"{score}/{total_Score}";
+        AudioManager.Instance.PlaySFX("Score");
         CheckWin();
     }
 
