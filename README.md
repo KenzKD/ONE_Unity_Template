@@ -16,14 +16,14 @@
 
    Here are some things you can look up to learn more about making Build Size smaller and using the “WebGL Optimizer” tool:
    
-   - **https://docs.crazygames.com/sdk/unity/resources/export-tips/**
+   - **_https://docs.crazygames.com/sdk/unity/resources/export-tips/_**
    
-   - **https://github.com/CrazyGamesCom/unity-optimizations-package**
+   - **_https://github.com/CrazyGamesCom/unity-optimizations-package_**
    
 5) This template already has all of the appropriate Build settings to get the Smallest File Size enabled. If you are only using the All_In_One_Manager Unity Package. Then you will have to look into Re-applying the settings on your own version.
 
 6) Do your **Testing on Google Chrome**. That is our Recommended Platform. 
-   <br><br>Here is how to Run your Built WebGL Games: **https://youtu.be/Ceqbmm7ydS8?si=J2Yd9te7_tfUI36**
+   <br><br>Here is how to Run your Built WebGL Games: **_https://youtu.be/Ceqbmm7ydS8?si=J2Yd9te7_tfUI36_**
 
 7) **Don’t** change the camera’s position or angle directly. If you want to move or rotate the camera, do it by changing the **“Camera Container”**. This applies to any scripts that move the camera too. We do this because we use the MilkShake Plugin to handle any the camera shakes and changing its position can mess with the animation.
    
@@ -33,12 +33,12 @@
 
 
 8) Make sure to **Normalize Any New Audio** before Exporting the Game to ensure consistent Audio Volume. I use a tool called Davinci Resolve to do this, but there might be other tools you can use too.
-   <br><br>Here is a video about the process: **https://youtu.be/nZJkcca7vJ4?si=uO_QnZoWxXGuMTnk**
+   <br><br>Here is a video about the process: **_https://youtu.be/nZJkcca7vJ4?si=uO_QnZoWxXGuMTnk_**
 
 9) Learn how to use the **[DoTween](https://dotween.demigiant.com/index.php)** Plugin. It allows you to easily add Animations to your Game.
 
 10) Learn how to use **Virtual Desktops** for your OS. This can help you Organize your work better and can even make following tutorials much easier.
-    <br><br>Here is a Setup Video for Windows 11: **https://youtu.be/uRuQVtlV81s?si=aQ-c0X4TaaLB5aGC**
+    <br><br>Here is a Setup Video for Windows 11: **_https://youtu.be/uRuQVtlV81s?si=aQ-c0X4TaaLB5aGC_**
     <br><br>You can setup your Touchpad like this to make it easier to switch between Desktops:
 
     <p align="center">
