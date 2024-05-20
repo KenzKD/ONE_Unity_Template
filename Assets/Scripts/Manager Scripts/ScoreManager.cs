@@ -45,13 +45,15 @@ public class ScoreManager : MonoBehaviour
     // Handle winning the game
     IEnumerator Win(float seconds)
     {
-        AudioManager.sfxAllowOverlap = true;
+        AudioManager.Instance.SetSFXAllowOverlap(true);
+        // AudioManager.Instance.SetSFXLooping(false);
         // AudioManager.Instance.PlaySFX("Bonus");
         // Cam.transform.DOMove(new Vector3(0f, 0f, 0f), 1.5f).SetEase(Ease.Linear).OnComplete(() =>
         //    {
         //    });
         yield return new WaitForSeconds(seconds);
-        AudioManager.sfxAllowOverlap = false;
+        AudioManager.Instance.SetSFXAllowOverlap(false);
+        AudioManager.Instance.SetSFXLooping(false);
         Time.timeScale = 0f;
         VideoManager.Instance.PlayVideo("Win");
         Debug.Log("Win!");

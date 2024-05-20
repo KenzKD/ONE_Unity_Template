@@ -7,9 +7,6 @@ public class AudioManager : MonoBehaviour
     // Singleton instance for easy access
     public static AudioManager Instance;
 
-    // Flag to allow overlapping sound effects
-    public static bool sfxAllowOverlap = false;
-
     // Audio mixer for managing audio channels
     public AudioMixer Mixer;
 
@@ -18,6 +15,9 @@ public class AudioManager : MonoBehaviour
 
     // Audio sources for background music and sound effects
     public AudioSource bgmSource, sfxSource;
+    
+    // Flag to allow overlapping sound effects
+    private static bool sfxAllowOverlap = false;
 
     // Initialize the audio manager
     void Awake()
@@ -45,18 +45,47 @@ public class AudioManager : MonoBehaviour
     // Play a sound effect by name
     public void PlaySFX(string name)
     {
-        Sound s = Array.Find(sfx, x => x.name == name);
-        if (s == null)
+        Sound sound = Array.Find(sfx, s => s.name == name);
+        if (sound == null)
         {
-            Debug.Log($"Sound '{name}' not found!");
+            Debug.LogWarning($"Sound '{name}' not found!");
+            return;
+        }
+
+        if (!sfxAllowOverlap)
+        {
+            sfxSource.Stop();
+        }
+
+        if (sfxSource.loop)
+        {
+            sfxSource.clip = sound.clip;
+            sfxSource.Play();
         }
         else
         {
-            if (!sfxAllowOverlap)
-            {
-                sfxSource.Stop();
-            }
-            sfxSource.PlayOneShot(s.clip);
+            sfxSource.PlayOneShot(sound.clip);
+        }
+    }
+
+
+    // Toggle looping of sfxSource
+    public void SetSFXLooping(bool isLooping)
+    {
+        sfxSource.loop = isLooping;
+        if (!isLooping)
+        {
+            sfxSource.Stop();
+        }
+    }
+
+    // Toggle sfxAllowOverlap
+    public void SetSFXAllowOverlap(bool allowOverlap)
+    {
+        sfxAllowOverlap = allowOverlap;
+        if (!allowOverlap)
+        {
+            sfxSource.Stop();
         }
     }
 
