@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     private static bool sfxAllowOverlap = false;
 
     // Initialize the audio manager
-    void Awake()
+    void Start()
     {
         Instance = this;
         bgmSource.Stop();

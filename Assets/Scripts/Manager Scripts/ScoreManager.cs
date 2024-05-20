@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
     public ShakePreset ShakePreset;
 
     // Initialize game state and UI
-    void Awake()
+    void Start()
     {
         Instance = this;
         scoreText.text = $"{score}/{total_Score}";

@@ -16,12 +16,10 @@ public class SettingsManager : MonoBehaviour
     public Slider _bgmSlider, _sfxSlider;
     public Button settingsButton;
     public GameObject introPanel, settingsPanel, scorePanel, settingObject, restartObject;
-
     private Image settingsBGM;
 
-
     // Initialize game state and UI
-    void Awake()
+    void Start()
     {
         Instance = this;
         Time.timeScale = 0f;
@@ -33,11 +31,9 @@ public class SettingsManager : MonoBehaviour
         settingObject.SetActive(true);
         restartObject.SetActive(false);
         settingsBGM = settingsPanel.GetComponent<Image>();
-    }
 
-    // Load volume settings or set to max
-    void Start()
-    {
+        // Load volume settings or set to max
+
         _bgmSlider.value = PlayerPrefs.GetFloat("bgmSavedVolume", _bgmSlider.maxValue);
         _sfxSlider.value = PlayerPrefs.GetFloat("sfxSavedVolume", _sfxSlider.maxValue);
 
