@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
     // Audio sources for background music and sound effects
     public AudioSource bgmSource, sfxSource;
-    
+
     // Flag to allow overlapping sound effects
     private static bool sfxAllowOverlap = false;
 
@@ -68,22 +68,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Toggle sfxAllowOverlap
+    public void SetSFXAllowOverlap(bool allowOverlap)
+    {
+        sfxAllowOverlap = allowOverlap;
+        if (!allowOverlap)
+        {
+            sfxSource.Stop();
+        }
+    }
 
     // Toggle looping of sfxSource
     public void SetSFXLooping(bool isLooping)
     {
         sfxSource.loop = isLooping;
         if (!isLooping)
-        {
-            sfxSource.Stop();
-        }
-    }
-
-    // Toggle sfxAllowOverlap
-    public void SetSFXAllowOverlap(bool allowOverlap)
-    {
-        sfxAllowOverlap = allowOverlap;
-        if (!allowOverlap)
         {
             sfxSource.Stop();
         }
