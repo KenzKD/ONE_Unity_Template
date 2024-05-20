@@ -31,13 +31,14 @@
   <img src="https://github.com/KenzKD/ONE_Unity_Template/assets/65004578/c55de439-f4d6-4a5e-9799-2f66b46c68fd" width="50%" />
 </p>
 
+8) **Avoid using `void Awake()`**. Using `void Awake()` can cause issues in the Browser, as it may sometimes fail to execute the functions within it. Instead, **use `void Start()`.**
 
-8) Make sure to **Normalize Any New Audio** before Exporting the Game to ensure consistent Audio Volume. I use a tool called Davinci Resolve to do this, but there might be other tools you can use too.
+9) Make sure to **Normalize Any New Audio** before Exporting the Game to ensure consistent Audio Volume. I use a tool called Davinci Resolve to do this, but there might be other tools you can use too.
    <br><br>Here is a video about the process: **_https://youtu.be/nZJkcca7vJ4?si=uO_QnZoWxXGuMTnk_**
 
-9) Learn how to use the **[DoTween](https://dotween.demigiant.com/index.php)** Plugin. It allows you to easily add Animations to your Game.
+10) Learn how to use the **[DoTween](https://dotween.demigiant.com/index.php)** Plugin. It allows you to easily add Animations to your Game.
 
-10) Learn how to use **Virtual Desktops** for your OS. This can help you Organize your work better and can even make following tutorials much easier.
+11) Learn how to use **Virtual Desktops** for your OS. This can help you Organize your work better and can even make following tutorials much easier.
     <br><br>Here is a Setup Video for Windows 11: **_https://youtu.be/uRuQVtlV81s?si=aQ-c0X4TaaLB5aGC_**
     <br><br>You can setup your Touchpad like this to make it easier to switch between Desktops:
 
@@ -58,7 +59,8 @@ ManagerScriptName.Instance.FunctionName(Parameters)
 1) **[AudioManager](https://github.com/KenzKD/ONE_Unity_Template/blob/main/Assets/Scripts/Manager%20Scripts/AudioManager.cs)**
     
     - `PlaySFX(String AudioClipName)` -> Plays a Sound Effect using the AudioClipName
-    - `sfxAllowOverlap = true/false` -> A bool variable to Allow SFX to Overlap one Another. By default it is set to false.
+    - `SetSFXAllowOverlap(bool allowOverlap)` -> A bool variable to Allow SFX to Overlap one Another. By default it is set to false.
+    - `SetSFXLooping(bool isLooping)` -> A bool variable to Toggle looping of sfxSource. By default it is set to false.
       
 2) **[ScoreManager](https://github.com/KenzKD/ONE_Unity_Template/blob/main/Assets/Scripts/Manager%20Scripts/ScoreManager.cs)**
     
