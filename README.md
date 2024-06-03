@@ -61,6 +61,7 @@ ManagerScriptName.Instance.FunctionName(Parameters)
     - `PlaySFX(String AudioClipName)` -> Plays a Sound Effect using the AudioClipName
     - `SetSFXAllowOverlap(bool allowOverlap)` -> A bool variable to Allow SFX to Overlap one Another. By default it is set to false.
     - `SetSFXLooping(bool isLooping)` -> A bool variable to Toggle looping of sfxSource. By default it is set to false.
+    - `StopSFX()` -> Stops All SFX Instantly including Looping Audio
       
 2) **[ScoreManager](https://github.com/KenzKD/ONE_Unity_Template/blob/main/Assets/Scripts/Manager%20Scripts/ScoreManager.cs)**
     
