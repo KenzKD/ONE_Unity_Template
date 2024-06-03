@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
 
         if (!sfxAllowOverlap)
         {
-            sfxSource.Stop();
+            StopSFX();
         }
 
         if (sfxSource.loop)
@@ -78,6 +78,12 @@ public class AudioManager : MonoBehaviour
     public void SetSFXLooping(bool isLooping)
     {
         sfxSource.loop = isLooping;
+    }
+
+    // Stop sfxSource
+    public void StopSFX()
+    {
+        sfxSource.Stop();
     }
 
     // Adjust the volume of the background music
