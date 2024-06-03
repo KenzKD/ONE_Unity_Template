@@ -40,6 +40,10 @@ public class ScoreManager : MonoBehaviour
         {
             StartCoroutine(Win(0f));
         }
+        // else if (score == total_Score - 1)
+        // {
+        //     StartCoroutine(PreWin(0f));
+        // }
     }
 
     // Handle winning the game
@@ -61,6 +65,12 @@ public class ScoreManager : MonoBehaviour
         AudioManager.Instance.sfxSource.Stop();
         AudioManager.Instance.PlaySFX("Win");
         WinScreen.SetActive(true);
+    }
+
+    // Handle Pre-Winning the game
+    IEnumerator PreWin(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 
     // Handle wrong answer
