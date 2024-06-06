@@ -36,7 +36,8 @@
 9) Make sure to **Normalize Any New Audio** before Exporting the Game to ensure consistent Audio Volume. I use a tool called Davinci Resolve to do this, but there might be other tools you can use too.
    <br><br>Here is a video about the process: **_https://youtu.be/nZJkcca7vJ4?si=uO_QnZoWxXGuMTnk_**
 
-10) Learn how to use the **[DoTween](https://dotween.demigiant.com/index.php)** Plugin. It allows you to easily add Animations to your Game.
+10) Learn how to use the **[DoTween](https://dotween.demigiant.com/index.php)** Plugin. It allows you to easily add Animations to your Game.<br>
+    Here is a **[Cheat Sheet](https://easings.net/)** for the different Animation Easing Settings.
 
 11) Learn how to use **Virtual Desktops** for your OS. This can help you Organize your work better and can even make following tutorials much easier.
     <br><br>Here is a Setup Video for Windows 11: **_https://youtu.be/uRuQVtlV81s?si=aQ-c0X4TaaLB5aGC_**
