@@ -20,9 +20,14 @@ public class AudioManager : MonoBehaviour
     private static bool sfxAllowOverlap = false;
 
     // Initialize the audio manager
+    void Awake()
+    {
+        Instance = this; // Set in Awake() for Bgm and Sfx volume preferences
+    }
+
+    // Start playing the BGM
     void Start()
     {
-        Instance = this;
         bgmSource.Stop();
         PlayBGM("Theme");
     }
