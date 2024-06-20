@@ -17,7 +17,7 @@ public class SettingsManager : MonoBehaviour
     public Button settingsButton;
     public GameObject introPanel, settingsPanel, scorePanel, settingObject, restartObject;
     private Image settingsBGM;
-
+    private bool isAnimating = false;
     // Initialize game state and UI
     void Start()
     {
@@ -45,6 +45,7 @@ public class SettingsManager : MonoBehaviour
     // Start the game
     public void StartGame()
     {
+        DOTween.PlayAll();
         introPanel.SetActive(false);
         scorePanel.SetActive(true);
         restartObject.SetActive(true);
@@ -78,12 +79,18 @@ public class SettingsManager : MonoBehaviour
     // Pause the game
     public void Pause()
     {
+        if (isAnimating) return; // Exit if already animating
+
+        isAnimating = true;
         settingsPanel.SetActive(true);
-        settingsBGM.DOFade(0.8f, 0.5f).SetEase(Ease.OutExpo).SetUpdate(true);
-        settingObject.transform.DOScale(0.001f, 0.25f).SetEase(Ease.InExpo).SetUpdate(true).OnComplete(() =>
+        settingObject.transform.DOScale(0.001f, 0.25f).SetEase(Ease.InExpo).SetUpdate(true);
+        settingsBGM.DOFade(0.8f, 0.5f).SetEase(Ease.OutExpo).SetUpdate(true).onComplete = () =>
         {
             settingObject.SetActive(false);
-        });
+            isAnimating = false;
+            DOTween.PauseAll();
+        };
+
         if (GameisStarted)
         {
             scorePanel.SetActive(false);
@@ -95,10 +102,18 @@ public class SettingsManager : MonoBehaviour
     // Resume the game
     public void Resume()
     {
+        if (isAnimating) return; // Exit if already animating
+
+        isAnimating = true;
+        DOTween.PlayAll();
         settingsBGM.DOFade(0.001f, 0.001f).SetUpdate(true);
         settingsPanel.SetActive(false);
         settingObject.SetActive(true);
-        settingObject.transform.DOScale(1, 0.25f).SetEase(Ease.OutExpo).SetUpdate(true);
+        settingObject.transform.DOScale(1, 0.25f).SetEase(Ease.OutExpo).SetUpdate(true).onComplete = () =>
+        {
+            isAnimating = false;
+        };
+
         if (GameisStarted)
         {
             scorePanel.SetActive(true);
